@@ -10,7 +10,7 @@ $bancoBrasil = new BancoBrasil('clientId', 'clientSecret', 'developerKey', 'envi
 ## Gerar Token
 
 ```
-$token = $bb->getTokenAcess();
+$token = $bancoBrasil->getTokenAcess();
 ```
 
 ## Registrar Boleto
@@ -207,7 +207,9 @@ $baixar[
 
 $baixar = $bancoBrasil->baixar($id_boleto, $baixar);
 ```
+## Informações
 
+Para mais informações sobre a API utilizada nesta integração, [Acesse este link](https://apoio.developers.bb.com.br/referency/post/5f9c2149f39b8500120ab13c)
 
 ### Exemplo
 Para ver a implementação dos métodos disponiveis, veja o arquivo example.php

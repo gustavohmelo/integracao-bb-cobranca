@@ -1,0 +1,26 @@
+{
+    "name": "gustavohmelo/integracao-bb-cobranca",
+    "description": "Integração com a API de cobrança do Banco do Brasil",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Gustavo Melo",
+            "email": "gustavomb2008@hotmail.com"
+        },
+        {
+            "name": "Marcelo de Melo Junior",
+            "email": "juninhomb2008@hotmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "MGM\\": "src/"
+        }
+    },
+    "minimum-stability": "stable",
+    "require": {
+        "guzzlehttp/guzzle": "^7.5",
+        "ext-json": "*"
+    }
+}

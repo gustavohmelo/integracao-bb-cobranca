@@ -68,11 +68,12 @@ class BancoBrasil
     public function register(array $fields = null){
 
         $headers = [
-            "Authorization"     => "Bearer " . $this->getTokenAcess()->access_token,
-            "Content-Type"      => "application/json",
+            "Authorization"                 => "Bearer " . $this->getTokenAcess()->access_token,
+            "Content-Type"                  => "application/json",
+            "X-Developer-Application-Key"   => $this->developerKey
         ];
 
-        $this->enviroment === "sandbox"  ? $headers["X-Developer-Application-Key"] = $this->developerKey : $headers["X-Application-Key"] = $this->developerKey;
+        var_dump($headers);
 
         try {
             $response = $this->httpClient->post(
@@ -93,11 +94,10 @@ class BancoBrasil
     public function alter($idBoleto, array $fields = null){
 
         $headers = [
-            "Authorization"     => "Bearer " . $this->getTokenAcess()->access_token,
-            "Content-Type"      => "application/json",
+            "Authorization"                 => "Bearer " . $this->getTokenAcess()->access_token,
+            "Content-Type"                  => "application/json",
+            "X-Developer-Application-Key"   => $this->developerKey,
         ];
-
-        $this->enviroment === "sandbox"  ? $headers["X-Developer-Application-Key"] = $this->developerKey : $headers["X-Application-Key"] = $this->developerKey;
 
         try {
             $response = $this->httpClient->patch(
@@ -117,11 +117,10 @@ class BancoBrasil
     public function read($idBoleto, $convenio)
     {
         $headers = [
-            "Authorization"     => "Bearer " . $this->getTokenAcess()->access_token,
-            "Content-Type"      => "application/json",
+            "Authorization"                 => "Bearer " . $this->getTokenAcess()->access_token,
+            "Content-Type"                  => "application/json",
+            "X-Developer-Application-Key"   => $this->developerKey,
         ];
-
-        $this->enviroment === "sandbox"  ? $headers["X-Developer-Application-Key"] = $this->developerKey : $headers["X-Application-Key"] = $this->developerKey;
 
         try {
             $response = $this->httpClient->get(
@@ -140,11 +139,10 @@ class BancoBrasil
     public function baixar($idBoleto, array $fields = null){
 
         $headers = [
-            "Authorization"     => "Bearer " . $this->getTokenAcess()->access_token,
-            "Content-Type"      => "application/json",
+            "Authorization"                 => "Bearer " . $this->getTokenAcess()->access_token,
+            "Content-Type"                  => "application/json",
+            "X-Developer-Application-Key"   => $this->developerKey,
         ];
-
-        $this->enviroment === "sandbox"  ? $headers["X-Developer-Application-Key"] = $this->developerKey : $headers["X-Application-Key"] = $this->developerKey;
 
         try {
             $response = $this->httpClient->post(

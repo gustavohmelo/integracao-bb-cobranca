@@ -1,21 +1,23 @@
 # Integração com a API de Cobranças do Banco do Brasil
 
+[![Packagist](https://img.shields.io/packagist/v/gustavohmelo/integracao-bb-cobranca.svg?style=flat-square)](https://github.com/gustavohmelo/integracao-bb-cobranca)
+
 ## Intanciar a classe
 
-```
+```php
 Valores disponiveis para "Enviroment" = "sandbox" ou "production"
 $bancoBrasil = new BancoBrasil('clientId', 'clientSecret', 'developerKey', 'enviroment');
 ```
 
 ## Gerar Token
 
-```
+```php
 $token = $bancoBrasil->getTokenAcess();
 ```
 
 ## Registrar Boleto
 
-```
+```php
 $registro = [
     'numeroConvenio' => '',
     'numeroCarteira' => '17',
@@ -89,7 +91,7 @@ $registrar = $bancoBrasil->register($registro);
 
 ## Consultar Boleto
 
-```
+```php
 $id_boleto = 'nossonumero';
 $numeroConvenio = '';
 $listar = $bancoBrasil->read($id_boleto, $numeroConvenio);
@@ -97,7 +99,7 @@ $listar = $bancoBrasil->read($id_boleto, $numeroConvenio);
 
 ## Editar Boleto
 
-```
+```php
 $id_boleto = 'nossonumero';
 $data = [
     'numeroConvenio' =>  '3128557',
@@ -199,7 +201,7 @@ $alterar = $bancoBrasil->alter($id_boleto, $data);
 
 ## Baixar Boleto
 
-```
+```php
 $id_boleto = 'nossonumero';
 $baixar[
     'numeroConvenio' => 'convenio'

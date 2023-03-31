@@ -58,11 +58,11 @@ class BancoBrasil
                     'form_params' => $body
                 ]
             );
+
+            return json_decode($response->getBody()->getContents());
         }catch(\Exception $e){
             return $e->getMessage();
         }
-
-        return json_decode($response->getBody()->getContents());
     }
 
     public function register(array $fields = null){
@@ -86,7 +86,7 @@ class BancoBrasil
 
             return json_decode($response->getBody()->getContents());
         } catch (GuzzleException $e) {
-            return json_decode($e->getResponse()->getBody()->getContents());
+            return $e->getMessage();
         }
 
     }
@@ -110,7 +110,7 @@ class BancoBrasil
 
             return json_decode($response->getBody()->getContents());
         } catch (GuzzleException $e) {
-            return json_decode($e->getResponse()->getBody()->getContents());
+            return $e->getMessage();
         }
     }
 
@@ -132,7 +132,7 @@ class BancoBrasil
 
             return json_decode($response->getBody()->getContents());
         } catch (GuzzleException $e) {
-            return json_decode($e->getResponse()->getBody()->getContents());
+            return $e->getMessage();
         }
     }
 
@@ -155,7 +155,7 @@ class BancoBrasil
 
             return json_decode($response->getBody()->getContents());
         } catch (GuzzleException $e) {
-            return json_decode($e->getResponse()->getBody()->getContents());
+            return $e->getMessage();
         }
     }
 
